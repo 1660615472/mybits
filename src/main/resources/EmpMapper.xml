@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cheer.javabean">
+<!--
+    namespace:名称空间,指定为接口的全类名，mybatis可以使配置文件和接口动态绑定
+    id：唯一标识
+    resultType：返回类型
+    #{id}：从传递过来的参数中取出id-->
+
+    <!--public Emp getEmp(Integer empno);-->
+    <!--id对应接口方法名字-->
+    <!--resultType：返回类型,此处返回Emp类的对象-->
+    <select id="getEmp"    resultType="com.cheer.javabean.model.Emp">
+    select * from emp where empno = #{empno}      </select>
+</mapper>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!-- 导入外部配置文件-->
+    <properties resource="resource.properties"> </properties>
+    <settings>
+        <!--        日志-->
+        <setting name="logImpl" value="log4j2"/>
+    </settings>
+    <environments default="development">
+        <environment id="development">
+    <transactionManager type="JDBC"/>
+    <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test02?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai"/>
+        <property name="username" value="root12345"/>
+        <property name="password" value="12345"/>
+    </dataSource>
+
+</environment>  </environments>
+    <!--将我们写好的sql映射文件（EmpMapper.xml）一定要注册到全局配置文件（mybatis-config.xml）中-->
+    <mappers>
+        <mapper resource="EmpMapper.xml"/>
+    </mappers>
+</configuration>
